@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormaDatosCaps.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +64,12 @@
     <Compile Include="Formularios\FormaEmpleado.Designer.cs">
       <DependentUpon>FormaEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Formainventarioproductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formainventarioproductos.Designer.cs">
+      <DependentUpon>Formainventarioproductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +84,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormaDatosCaps.resx">
       <DependentUpon>FormaDatosCaps.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormaEmpleado.resx">
       <DependentUpon>FormaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Formainventarioproductos.resx">
+      <DependentUpon>Formainventarioproductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormaProducto.resx">
       <DependentUpon>FormaProducto.cs</DependentUpon>
@@ -142,6 +142,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descarga %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_7dedd005-f381-431a-ba75-6c78a6bfbd82.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_46ece948-e2e4-442a-9cb4-1282e641aad6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_3bd25ab1-f4b4-41c3-ae60-e809a37bb17f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_b2cfeef6-e6b7-4d59-9b02-c3c114f2baeb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIG.GEU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %287%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %287%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

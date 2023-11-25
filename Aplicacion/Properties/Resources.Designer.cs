@@ -63,9 +63,79 @@ namespace Aplicacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3bd25ab1_f4b4_41c3_ae60_e809a37bb17f {
+            get {
+                object obj = ResourceManager.GetObject("_3bd25ab1-f4b4-41c3-ae60-e809a37bb17f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _46ece948_e2e4_442a_9cb4_1282e641aad6 {
+            get {
+                object obj = ResourceManager.GetObject("_46ece948-e2e4-442a-9cb4-1282e641aad6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7dedd005_f381_431a_ba75_6c78a6bfbd82 {
+            get {
+                object obj = ResourceManager.GetObject("_7dedd005-f381-431a-ba75-6c78a6bfbd82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _b2cfeef6_e6b7_4d59_9b02_c3c114f2baeb {
+            get {
+                object obj = ResourceManager.GetObject("_b2cfeef6-e6b7-4d59-9b02-c3c114f2baeb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descarga__1_ {
             get {
                 object obj = ResourceManager.GetObject("descarga (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga__10_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (10)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga__11_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (11)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga__12_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (12)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +163,26 @@ namespace Aplicacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descarga__7_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga__7_1 {
+            get {
+                object obj = ResourceManager.GetObject("descarga (7)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descarga__8_ {
             get {
                 object obj = ResourceManager.GetObject("descarga (8)", resourceCulture);
@@ -106,6 +196,26 @@ namespace Aplicacion.Properties {
         internal static System.Drawing.Bitmap descarga__9_ {
             get {
                 object obj = ResourceManager.GetObject("descarga (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIG {
+            get {
+                object obj = ResourceManager.GetObject("OIG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIG_GEU {
+            get {
+                object obj = ResourceManager.GetObject("OIG.GEU", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

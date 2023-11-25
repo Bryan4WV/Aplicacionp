@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion.Formularios;
 
 namespace Aplicacion.Formas
 {
@@ -28,12 +29,52 @@ namespace Aplicacion.Formas
             DateTime fechaNacimiento = dateTimePicker1.Value; // Obtener la fecha seleccionada.
             string sexo = txtsexo.Text;
 
-            // Validación de datos
-            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellidos) || string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(confirmarContraseña) ||
-                string.IsNullOrWhiteSpace(telefono) || string.IsNullOrWhiteSpace(sexo))
+            // Crear una lista para almacenar los nombres de los campos faltantes.
+            List<string> camposFaltantes = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(nombre))
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                camposFaltantes.Add("Nombre");
+            }
+
+            if (string.IsNullOrWhiteSpace(apellidos))
+            {
+                camposFaltantes.Add("Apellidos");
+            }
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                camposFaltantes.Add("Email");
+            }
+
+            if (string.IsNullOrWhiteSpace(contraseña))
+            {
+                camposFaltantes.Add("Contraseña");
+            }
+
+            if (string.IsNullOrWhiteSpace(confirmarContraseña))
+            {
+                camposFaltantes.Add("Confirmar Contraseña");
+            }
+
+            if (string.IsNullOrWhiteSpace(telefono))
+            {
+                camposFaltantes.Add("Teléfono");
+            }
+
+            if (string.IsNullOrWhiteSpace(sexo))
+            {
+                camposFaltantes.Add("Sexo");
+            }
+
+            if (camposFaltantes.Count > 0)
+            {
+                string mensaje = "Por favor, complete los siguientes campos:";
+                foreach (string campo in camposFaltantes)
+                {
+                    mensaje += "\n- " + campo;
+                }
+                MessageBox.Show(mensaje, "Campos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (contraseña != confirmarContraseña)
             {
@@ -53,9 +94,9 @@ namespace Aplicacion.Formas
             }
             else
             {
-                // Los datos son válidos, puedes almacenarlos o realizar otras acciones necesarias.
                 MessageBox.Show("Registro exitoso. Bienvenido, " + nombre + " " + apellidos + "!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private bool IsValidEmail(string email)
@@ -70,20 +111,39 @@ namespace Aplicacion.Formas
                 return false;
             }
         }
-
         private bool IsPhoneNumberValid(string phoneNumber)
         {
             return !phoneNumber.Any(char.IsLetter);
         }
-
         private bool ContainsNumbersOrSpaces(string text)
         {
             return text.Any(char.IsDigit) || text.Any(char.IsWhiteSpace);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Formingresoapp inicia = new Formingresoapp();
+            inicia.Show();
+            this.Hide();
         }
     }
 }
