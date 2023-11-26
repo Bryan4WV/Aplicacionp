@@ -52,11 +52,11 @@ namespace Aplicacion
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ButtonRegistrar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,6 +267,29 @@ namespace Aplicacion
             this.label21.TabIndex = 33;
             this.label21.Text = "Bienvenido a la base de datos de oxxo";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(12, 633);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 37);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "OXXO ®";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(836, 622);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(344, 37);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "A La Vuelta De Tu Vida ";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Aplicacion.Properties.Resources.descarga__10_;
@@ -304,29 +327,6 @@ namespace Aplicacion
             this.ButtonRegistrar.TabIndex = 6;
             this.ButtonRegistrar.UseVisualStyleBackColor = false;
             this.ButtonRegistrar.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 633);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 37);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "OXXO ®";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(836, 622);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(344, 37);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "A La Vuelta De Tu Vida ";
             // 
             // Formingresoapp
             // 
