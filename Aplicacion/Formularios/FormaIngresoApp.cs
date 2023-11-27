@@ -32,24 +32,8 @@ namespace Aplicacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string usuario = textUsuario.Text;
-            string contraseña = textContraseña.Text;
 
-            // Lógica de autenticación (debes ajustar esto según tus necesidades)
-            if (usuario == "Bryan" && contraseña == "witrago")
-            {
-                // Credenciales correctas, procede con el código de inicio de sesión
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormaDatosCaps Inicio = new FormaDatosCaps();
-                Inicio.Show();
-                this.Hide();
-            }
-            else
-            {
-                // Credenciales incorrectas, muestra un mensaje de error
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            ValidarCredenciales();
 
         
         }
@@ -98,16 +82,26 @@ namespace Aplicacion
             string usuario = textUsuario.Text;
             string contraseña = textContraseña.Text;
 
-            // Las credenciales son incorrectas, muestra un mensaje de error adecuado
-            if (usuario != "Bryan" || contraseña != "witrago")
+            // Modificar la lógica de autenticación para permitir diferentes usuarios y contraseñas
+            if ((usuario == "Bryan_WV" && contraseña == "witrago") ||
+                (usuario == "Diego_MM" && contraseña == "mendez") ||
+                (usuario == "Jose_RN" && contraseña == "negrete") ||
+                (usuario == "Cristian_CR" && contraseña == "cruz") ||
+                (usuario == "Fernando_VM" && contraseña == "montaño"))
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Credenciales correctas, procede con la lógica de inicio de sesión
+                MessageBox.Show("Inicio de sesión exitoso", "Bienvenido a la base de datos de oxxo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Resto del código de inicio de sesión...
+
+                // Ejemplo: Abrir una nueva forma después del inicio de sesión
+                FormaDatosCaps Inicio = new FormaDatosCaps();
+                Inicio.Show();
+                this.Hide();
             }
             else
             {
-                // Credenciales correctas, procede con la lógica de inicio de sesión
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Resto del código de inicio de sesión...
+                // Credenciales incorrectas, muestra un mensaje de error adecuado
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

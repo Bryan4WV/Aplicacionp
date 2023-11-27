@@ -112,5 +112,11 @@ namespace Aplicacion.Formularios
             verproductos.Show();
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Formavertrabajadores vertrabajadores = new Formavertrabajadores();
+            vertrabajadores.Show();
+        }
     }
 }
