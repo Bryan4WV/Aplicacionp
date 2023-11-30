@@ -23,101 +23,9 @@ namespace Aplicacion.Formularios
         public string Telefono { get; private set; }
         public string Curp { get; private set; }
 
-        private bool ValidarCampo(TextBox textBox, string nombreCampo, string mensajeError)
-        {
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                errores.Add($"{nombreCampo}: {mensajeError}");
-                return false;
-            }
 
-            return true;
-        }
 
-        private bool ValidarCampoNumerico(TextBox textBox, string nombreCampo, string mensajeError)
-        {
-            if (string.IsNullOrWhiteSpace(textBox.Text) || !int.TryParse(textBox.Text, out _))
-            {
-                errores.Add($"{nombreCampo}: {mensajeError}");
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool ValidarCampoDecimal(TextBox textBox, string nombreCampo, string mensajeError)
-        {
-            if (string.IsNullOrWhiteSpace(textBox.Text) || !decimal.TryParse(textBox.Text, out _))
-            {
-                errores.Add($"{nombreCampo}: {mensajeError}");
-                return false;
-            }
-
-            return true;
-        }
-        private string ObtenerCamposFaltantesMensaje()
-        {
-            return string.Join("\n", errores);
-        }
-        private void RealizarValidaciones()
-        {
-            errores.Clear();
-
-            if (ValidarCampo(txtnombre, "Nombre", "El nombre es obligatorio"))
-            {
-                Nombre = txtnombre.Text;
-            }
-
-            if (ValidarCampo(txtapellidos, "Apellidos", "Los apellidos son obligatorios"))
-            {
-                Apellidos = txtapellidos.Text;
-            }
-
-            if (ValidarCampoNumerico(txtedad, "Edad", "La edad debe ser un valor numérico válido"))
-            {
-                Edad = int.Parse(txtedad.Text);
-            }
-
-            if (ValidarCampo(txthorario, "Horario", "El horario es obligatorio"))
-            {
-                Horario = txthorario.Text;
-            }
-
-            if (ValidarCampoDecimal(txtsalario, "Salario", "El salario debe ser un valor numérico válido"))
-            {
-                Salario = decimal.Parse(txtsalario.Text);
-            }
-
-            if (ValidarCampo(txtfechaingreso, "Fecha de Ingreso", "La fecha de ingreso es obligatoria"))
-            {
-                FechaIngreso = txtfechaingreso.Text;
-            }
-
-            if (ValidarCampo(txttelefono, "Teléfono", "El teléfono es obligatorio"))
-            {
-                Telefono = txttelefono.Text;
-            }
-
-            if (ValidarCampo(txtcurp, "CURP", "El CURP es obligatorio"))
-            {
-                Curp = txtcurp.Text;
-            }
-
-            if (errores.Count > 0)
-            {
-                string mensajeError = "Los siguientes campos son necesarios o contienen datos no válidos:\n\n";
-                mensajeError += string.Join("\n", errores);
-
-                MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Resto del código...
-
-            DialogResult = DialogResult.OK;
-            Close();
-        
-    }
+   
 
         public FormaEmpleado()
         {
@@ -126,97 +34,86 @@ namespace Aplicacion.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Nombre = txtnombre.Text;
+            Apellidos = txtapellidos.Text;
 
-            if (ValidarDatos())
+            // Lista para almacenar los campos no válidos
+            List<string> camposNoValidos = new List<string>();
+
+            // Validar el nombre
+            if (string.IsNullOrEmpty(Nombre))
             {
-                Nombre = txtnombre.Text;
-                Apellidos = txtapellidos.Text;
-                Edad = Convert.ToInt32(txtedad.Text);
-                Horario = txthorario.Text;
-                Salario = Convert.ToDecimal(txtsalario.Text);
-                FechaIngreso = txtfechaingreso.Text;
-                Telefono = txttelefono.Text;
-                Curp = txtcurp.Text;
+                camposNoValidos.Add("Nombre(s)");
+            }
 
-                DialogResult = DialogResult.OK;
-                Close();
+            // Validar los apellidos
+            if (string.IsNullOrEmpty(Apellidos))
+            {
+                camposNoValidos.Add("Apellidos");
+            }
+
+            // Validar la edad
+            if (int.TryParse(txtedad.Text, out int edad))
+            {
+                Edad = edad;
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese datos válidos en todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                camposNoValidos.Add("Edad");
             }
-            if (ValidarDatos())
-            {
-                Nombre = txtnombre.Text;
-                Apellidos = txtapellidos.Text;
-                Edad = Convert.ToInt32(txtedad.Text);
-                Horario = txthorario.Text;
-                Salario = Convert.ToDecimal(txtsalario.Text);
-                FechaIngreso = txtfechaingreso.Text;
-                Telefono = txttelefono.Text;
-                Curp = txtcurp.Text;
 
-                DialogResult = DialogResult.OK;
-                Close();
+            // Validar el horario
+            Horario = txthorario.Text;
+            if (string.IsNullOrEmpty(Horario))
+            {
+                camposNoValidos.Add("Horario");
+            }
+
+            // Validar el salario
+            if (decimal.TryParse(txtsalario.Text, out decimal salario))
+            {
+                Salario = salario;
             }
             else
             {
-                string mensajeError = "Por favor, ingrese datos válidos en los siguientes campos:\n";
-                mensajeError += ObtenerCamposFaltantesMensaje();
+                camposNoValidos.Add("Salario");
+            }
+
+            // Validar la fecha de ingreso
+            FechaIngreso = txtfechaingreso.Text;
+            if (string.IsNullOrEmpty(FechaIngreso))
+            {
+                camposNoValidos.Add("Fecha de Ingreso");
+            }
+
+            // Validar el número de teléfono
+            Telefono = txttelefono.Text;
+            if (string.IsNullOrEmpty(Telefono))
+            {
+                camposNoValidos.Add("Número de Teléfono");
+            }
+
+            // Validar el CURP
+            Curp = txtcurp.Text;
+            if (string.IsNullOrEmpty(Curp))
+            {
+                camposNoValidos.Add("CURP");
+            }
+
+            // Si hay campos no válidos, mostrar mensaje de error
+            if (camposNoValidos.Count > 0)
+            {
+                string mensajeError = "Los siguientes campos son necesarios o contienen datos no válidos:\n\n";
+                mensajeError += string.Join("\n", camposNoValidos);
+
                 MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
+            // Si todas las validaciones son exitosas, cerrar el formulario
+            DialogResult = DialogResult.OK;
+            Close();
         }
-
-        private bool ValidarDatos()
-        {
-            errores.Clear();
-
-            if (!ValidarCampo(txtnombre, "Nombre", "El nombre es obligatorio"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampo(txtapellidos, "Apellidos", "Los apellidos son obligatorios"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampoNumerico(txtedad, "Edad", "La edad debe ser un valor numérico válido"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampo(txthorario, "Horario", "El horario es obligatorio"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampoDecimal(txtsalario, "Salario", "El salario debe ser un valor numérico válido"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampo(txtfechaingreso, "Fecha de Ingreso", "La fecha de ingreso es obligatoria"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampo(txttelefono, "Teléfono", "El teléfono es obligatorio"))
-            {
-                return false;
-            }
-
-            if (!ValidarCampo(txtcurp, "CURP", "El CURP es obligatorio"))
-            {
-                return false;
-            }
-
-            return true;
-        
-
-
-    }
 
         private void FormaEmpleado_Load(object sender, EventArgs e)
         {

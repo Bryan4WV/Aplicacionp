@@ -43,13 +43,37 @@ namespace Aplicacion.Formularios
             // Add data to the DataGridView
             for (int i = 0; i < data.GetLength(0); i++)
             {
-                dataGridView1.Rows.Add(data[i, 0], data[i, 1], data[i, 2], data[i, 3], data[i, 4], data[i, 5], data[i, 6], data[i, 7], data[i, 8]);
+                dataGridViewempleados.Rows.Add(data[i, 0], data[i, 1], data[i, 2], data[i, 3], data[i, 4], data[i, 5], data[i, 6], data[i, 7], data[i, 8]);
             }
         }
 
             private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewempleados.SelectedRows.Count > 0)
+            {
+                // Preguntar al usuario si realmente desea eliminar los datos
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres eliminar los datos seleccionados?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Eliminar las filas seleccionadas
+                    foreach (DataGridViewRow fila in dataGridViewempleados.SelectedRows)
+                    {
+                        dataGridViewempleados.Rows.Remove(fila);
+                        // Aquí también puedes realizar la eliminación en tu base de datos si es necesario
+                        // TuMetodoParaEliminarDatosEmpleado(fila);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona al menos una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -14,11 +14,15 @@ namespace Aplicacion
 {
     public partial class Formingresoapp : Form
     {
+
+
         public Formingresoapp()
         {
             InitializeComponent();
-            
+
+
         }
+   
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -35,7 +39,7 @@ namespace Aplicacion
 
             ValidarCredenciales();
 
-        
+
         }
 
         private void buttonSigForm_Click(object sender, EventArgs e)
@@ -82,26 +86,43 @@ namespace Aplicacion
             string usuario = textUsuario.Text;
             string contraseña = textContraseña.Text;
 
-            // Modificar la lógica de autenticación para permitir diferentes usuarios y contraseñas
-            if ((usuario == "Bryan_WV" && contraseña == "witrago") ||
-                (usuario == "Diego_MM" && contraseña == "mendez") ||
-                (usuario == "Jose_RN" && contraseña == "negrete") ||
-                (usuario == "Cristian_CR" && contraseña == "cruz") ||
-                (usuario == "Fernando_VM" && contraseña == "montaño"))
+            // Verificar si el usuario y la contraseña no están vacíos
+            if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(contraseña))
             {
-                // Credenciales correctas, procede con la lógica de inicio de sesión
-                MessageBox.Show("Inicio de sesión exitoso", "Bienvenido a la base de datos de oxxo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Resto del código de inicio de sesión...
-
-                // Ejemplo: Abrir una nueva forma después del inicio de sesión
-                FormaDatosCaps Inicio = new FormaDatosCaps();
-                Inicio.Show();
-                this.Hide();
+                MessageBox.Show("Por favor, ingrese un nombre de usuario y una contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrEmpty(usuario))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrEmpty(contraseña))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                // Credenciales incorrectas, muestra un mensaje de error adecuado
-                MessageBox.Show("Usuario y/o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Modificar la lógica de autenticación para permitir diferentes usuarios y contraseñas
+                if ((usuario == "Bryan_WV" && contraseña == "witrago") ||
+                    (usuario == "Diego_MM" && contraseña == "mendez") ||
+                    (usuario == "Jose_RN" && contraseña == "negrete") ||
+                    (usuario == "Cristian_CR" && contraseña == "cruz") ||
+                    (usuario == "Fernando_VM" && contraseña == "montaño"))
+                {
+                    // Credenciales correctas, procede con la lógica de inicio de sesión
+                    MessageBox.Show("Inicio de sesión exitoso", "Bienvenido a la base de datos de oxxo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Resto del código de inicio de sesión...
+
+                    // Ejemplo: Abrir una nueva forma después del inicio de sesión
+                    FormaDatosCaps Inicio = new FormaDatosCaps();
+                    Inicio.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Credenciales incorrectas, muestra un mensaje de error adecuado
+                    MessageBox.Show("Usuario y/o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
